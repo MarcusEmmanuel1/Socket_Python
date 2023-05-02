@@ -14,7 +14,7 @@ while True:
     num = random.randint(10 ** (num_casas - 1),
                          (10 ** num_casas) - 1)  # número aleatório com o número de casas especificado
 
-    print(f'NÚMERO ENVIADO:  {num}')
+    print(f'VALOR ENVIADO:  {num}')
 
     # Convertendo o número para bytes e enviando ao servidor
     s.send(str(num).encode())
@@ -24,10 +24,10 @@ while True:
     response = data.decode()
 
     # Imprimindo o valor recebido e a mensagem "FIM"
-    print(f'NÚMERO RECEBIDO: {response} FIM')
+    print(f'VALOR RECEBIDO: {response} FIM')
 
     # Encerrando a conexão
     s.close()
     print("***********************************************")
     # Esperando 10 segundos antes de iniciar a próxima iteração
-    time.sleep(0.1)
+    time.sleep(10)
