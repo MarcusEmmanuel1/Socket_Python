@@ -10,7 +10,7 @@ def digitCount(n):
 
 # Função para gerar uma string aleatória.
 def randomStringGenerator(size, chars=string.ascii_uppercase + string.digits):
-    return ''.join(random.choice(string.digits) for _ in range(size))
+    return ''.join(random.choice(chars) for _ in range(size))
 
 
 # Função de checagem de número par
@@ -40,9 +40,9 @@ while True:
             conn.close()
             print("*********************")
             break
-        if digitCount(data) > 10:
-            data = randomStringGenerator(digitCount(data)).encode()
-        elif digitCount(data) <= 10:
+        if digitCount(abs(int(data))) > 10:
+            data = randomStringGenerator(digitCount(abs(int(data)))).encode()
+        elif digitCount(abs(int(data))) <= 10:
             r = evenNumber(int(data))
             if r:
                 data = b'PAR'
