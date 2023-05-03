@@ -2,16 +2,15 @@ import socket
 import random
 import string
 
+#Funções utilitárias 
 
 # Função de contagem de digitos
 def digitCount(n):
     return len(str(n))
 
-
 # Função para gerar uma string aleatória.
 def randomStringGenerator(size, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
-
 
 # Função de checagem de número par
 def evenNumber(n):
@@ -19,7 +18,6 @@ def evenNumber(n):
         return True
 
     return False
-
 
 HOST = 'localhost'
 PORT = 50000
